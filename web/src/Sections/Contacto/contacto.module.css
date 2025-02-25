@@ -1,0 +1,53 @@
+.container {
+    background-color: #1b4484;
+    padding: 1rem 4rem 4rem 4rem;
+    color: white;
+
+}
+
+.container h1 {
+    color: #ecb53d
+}
+
+.contacto {
+    display: flex;
+}
+
+
+.redes {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 18px;
+}
+
+.redes ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.formulario form {
+    width: 100%;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}

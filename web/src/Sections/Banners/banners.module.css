@@ -1,0 +1,23 @@
+.banners {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 10px;
+    padding: 0 4rem;
+    margin-bottom: 4rem;
+}
+
+.banners img {
+    flex: 1;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banners img:first-child,
+.banners img:last-child {
+    height: 450px;
+}
+
+.banners img:nth-child(2) {
+    height: 500px;
+}
