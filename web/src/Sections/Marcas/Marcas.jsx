@@ -2,13 +2,13 @@ import style from "./marcas.module.css"
 
 const Marcas = () => {
     return (
-        <div className={style.marcas}>
+        <section id="nuestras-marcas" className={style.marcas}>
             <h1>Nuestras Marcas</h1>
             <div>
 
             </div>
 
-        </div>
+        </section>
     )
 }
 

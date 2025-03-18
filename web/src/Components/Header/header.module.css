@@ -9,28 +9,106 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    background-color: white;
-    /* Ajusta el color según tu diseño */
+    background-color: #e9e8e8;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra opcional */
+}
+
+.headerTop {
+    position: relative;
+    /* Para posicionar correctamente el botón */
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    /* flex-grow: 1; */
+    /* Permite que ocupe el espacio disponible */
 }
 
 .logo {
     height: 100px;
 }
 
+.login:hover {
+    color: grey
+}
+
+.login {
+    position: absolute;
+    right: 6%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #182f65;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+
 
 .menu {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    align-items: center;
+    width: 70%;
     list-style: none;
     padding: 0px;
 }
 
-.menu li {
-    color: #1b4484;
+.menu li button {
+    color: #182f65;
     font-weight: bold;
     text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    user-select: none;
+    padding: 0px;
+}
+
+.menu li:nth-child(4) button {
+    color: white;
+    font-size: 18px;
+    text-transform: none;
+    background-color: #182f65;
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border: solid 1px white;
+    transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+}
+
+.menu li:nth-child(4) button:hover {
+    color: #182f65;
+    background-color: white;
+    border: solid 1px #182f65;
+}
+
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    user-select: none;
+    padding: 0px;
+}
+
+button:focus {
+    outline: none;
 }

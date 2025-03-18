@@ -1,12 +1,14 @@
 .container {
-    background-color: #1b4484;
+    background-color: #182f65;
     padding: 1rem 4rem 4rem 4rem;
     color: white;
 
 }
 
 .container h1 {
-    color: #ecb53d
+    color: #ecb53d;
+    text-transform: uppercase;
+
 }
 
 .contacto {
@@ -17,6 +19,7 @@
 .redes {
     width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

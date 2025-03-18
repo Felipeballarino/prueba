@@ -1,5 +1,5 @@
 import { TextField, Button, Box } from "@mui/material";
-import { Mail, Facebook, Instagram, Phone } from "@mui/icons-material";
+import { Facebook, Instagram, Mail, Phone, Place } from "@mui/icons-material";
 import styles from "./contacto.module.css";
 
 const Contacto = () => {
@@ -15,15 +15,20 @@ const Contacto = () => {
     };
 
     return (
-        <Box className={styles.container}>
+        <section id="contactos-redes" className={styles.container}>
             <h1 >Contacto y Redes</h1>
             <Box className={styles.contacto}>
                 <Box className={styles.redes}>
                     <ul>
-                        <li><Mail /> Ferreteria@gmail.com</li>
-                        <li><Facebook /> Facebook</li>
-                        <li><Instagram /> Instagram</li>
-                        <li><Phone /> 3537787919891</li>
+                        <li><Mail />dgempresa@live.com</li>
+                        {/* <li><Facebook /> Facebook</li> */}
+                        {/* <li><Instagram /> Instagram</li> */}
+                        <li><Phone />+54 11 3673 0478</li>
+                        <li><Place />Carlos casares 3950 - Isidro Casanova</li>
+                    </ul>
+                    <ul style={{ display: "flex", flexDirection: "row", }}>
+                        <li ><Facebook style={{ fontSize: "2rem" }} /> </li>
+                        <li><Instagram style={{ fontSize: "2rem" }} /> </li>
                     </ul>
                 </Box>
                 <Box className={styles.formulario} component="form" onSubmit={handleSubmit}>
@@ -36,7 +41,7 @@ const Contacto = () => {
                             required
                             sx={{ color: "white", border: "white solid 1px" }}
                             InputProps={{ style: { color: "white", borderColor: "white" } }}
-                            InputLabelProps={{ style: { color: "white", background: "#1b4484" } }}
+                            InputLabelProps={{ style: { color: "white", background: "#182f65" } }}
                         />
                         <TextField
                             fullWidth
@@ -47,7 +52,7 @@ const Contacto = () => {
                             required
                             sx={{ color: "white", border: "white solid 1px" }}
                             InputProps={{ style: { color: "white", borderColor: "white" } }}
-                            InputLabelProps={{ style: { color: "white", background: "#1b4484" } }}
+                            InputLabelProps={{ style: { color: "white", background: "#182f65" } }}
                         />
                         <TextField
                             fullWidth
@@ -57,7 +62,7 @@ const Contacto = () => {
                             required
                             sx={{ color: "white", border: "white solid 1px" }}
                             InputProps={{ style: { color: "white", borderColor: "white" } }}
-                            InputLabelProps={{ style: { color: "white", background: "#1b4484" } }}
+                            InputLabelProps={{ style: { color: "white", background: "#182f65" } }}
                         />
                     </div>
                     <TextField
@@ -70,12 +75,12 @@ const Contacto = () => {
                         required
                         sx={{ color: "white", border: "white solid 1px" }}
                         InputProps={{ style: { color: "white", borderColor: "white" } }}
-                        InputLabelProps={{ style: { color: "white", background: "#1b4484" } }}
+                        InputLabelProps={{ style: { color: "white", background: "#182f65" } }}
                     />
                     <Button variant="contained" sx={{ background: "#ecb53d", width: "30%", height: "40px", fontWeight: "bold" }} type="submit">Enviar</Button>
                 </Box>
             </Box>
-        </Box>
+        </section>
     );
 };
 

@@ -1,8 +1,8 @@
 .nosotros {
     padding-top: 3rem;
     display: flex;
-    height: 80vh;
-    background-color: #1b4484;
+    height: 110vh;
+    background-color: #182f65;
     padding: 1rem 4rem;
     gap: 3rem;
 
@@ -12,8 +12,14 @@
     width: 50%;
 }
 
+.info h2 {
+    color: #ecb53d;
+    text-transform: uppercase;
+}
+
 .info h1 {
-    color: #ecb53d
+    color: #ecb53d;
+    text-transform: uppercase;
 }
 
 .info p {
@@ -27,12 +33,21 @@
 }
 
 
-.foto {
+.right {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
 }
 
-.foto img {
+.right h3 {
+    color: #ecb53d;
+    text-transform: uppercase;
+}
+
+.right img {
     width: 100%;
-    height: 100%;
+    height: 25%;
     object-fit: cover;
 }
