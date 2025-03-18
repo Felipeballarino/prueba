@@ -7,10 +7,10 @@ const Contacto = () => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log("Formulario enviado:", {
-            nombre: data.get("nombre"),
-            email: data.get("email"),
-            telefono: data.get("telefono"),
-            mensaje: data.get("mensaje"),
+            nombre: data.get("Nombre y Apellido"),
+            email: data.get("eEmail"),
+            telefono: data.get("Telefono"),
+            mensaje: data.get("Mensaje"),
         });
     };
 
@@ -37,7 +37,7 @@ const Contacto = () => {
                             fullWidth
                             margin="normal"
                             name="nombre"
-                            label="Nombre"
+                            label="Nombre y Apellido"
                             required
                             sx={{ color: "white", border: "white solid 1px" }}
                             InputProps={{ style: { color: "white", borderColor: "white" } }}
