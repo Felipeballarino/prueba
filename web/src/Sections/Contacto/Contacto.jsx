@@ -77,7 +77,7 @@ const Contacto = () => {
                         InputProps={{ style: { color: "white", borderColor: "white" } }}
                         InputLabelProps={{ style: { color: "white", background: "#182f65" } }}
                     />
-                    <Button variant="contained" sx={{ background: "#ecb53d", width: "30%", height: "40px", fontWeight: "bold" }} type="submit">Enviar</Button>
+                    <Button variant="contained" sx={{ background: "#ffd418", width: "30%", height: "40px", fontWeight: "bold" }} type="submit">Enviar</Button>
                 </Box>
             </Box>
         </section>

@@ -1,16 +1,17 @@
 @font-face {
-  font-family: 'RussoOne';
-  src: url('./assets/fonts/RussoOne-Regular.ttf') format('truetype');
+  font-family: 'MontserratExtraBold';
+  src: url('./assets/fonts/Montserrat-ExtraBold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Kanit';
-  src: url('./assets/fonts/Kanit-Regular.ttf') format('truetype');
+  font-family: 'MontserratMedium';
+  src: url('./assets/fonts/Montserrat-Medium.ttf') format('truetype');
 }
 
 :root {
-  letter-spacing: 2px;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'MontserratMedium', sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+
 
 }
 
@@ -49,20 +50,19 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  font-family: 'RussoOne', sans-serif;
+  font-family: 'MontserratExtraBold', sans-serif;
 }
 
 h2 {
-  font-family: 'RussoOne', sans-serif;
+  font-family: 'MontserratExtraBold', sans-serif;
 }
 
 h3 {
-  font-family: 'RussoOne', sans-serif;
+  font-family: 'MontserratExtraBold', sans-serif;
 }
 
 li button {
-  letter-spacing: 2px;
-  font-family: 'RussoOne', sans-serif;
+  font-family: 'MontserratExtraBold', sans-serif;
 }
 
 button {
@@ -89,7 +89,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #e9e8e8;
+    background-color: white;
   }
 
   a:hover {

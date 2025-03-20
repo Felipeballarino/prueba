@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: end;
     gap: 10px;
-    padding: 0 4rem;
     margin-bottom: 4rem;
 }
 
@@ -20,4 +19,12 @@
 
 .banners img:nth-child(2) {
     height: 500px;
+}
+
+.infoText {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    color: #182f65;
 }

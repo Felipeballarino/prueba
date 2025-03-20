@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    background-color: #e9e8e8;
+    background-color: #182f65;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -45,7 +45,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #182f65;
+    color: white;
     font-weight: bold;
     display: flex;
     flex-direction: column;
@@ -56,6 +56,7 @@
 
 
 .menu {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,7 +66,7 @@
 }
 
 .menu li button {
-    color: #182f65;
+    color: white;
     font-weight: bold;
     text-transform: uppercase;
     background: none;
@@ -75,27 +76,34 @@
     outline: none;
     user-select: none;
     padding: 0px;
+    font-size: 1.2rem;
 }
 
+
+
 .menu li:nth-child(4) button {
-    color: white;
+    color: #182f65;
     font-size: 18px;
     text-transform: none;
-    background-color: #182f65;
+    background-color: white;
     border-radius: 8px;
     padding: 4px 12px;
     font-weight: 500;
     display: flex;
     align-items: center;
     gap: .5rem;
-    border: solid 1px white;
+    border: solid 1px #182f65;
     transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+    font-family: 'MontserratExtraBold', sans-serif;
+
 }
 
 .menu li:nth-child(4) button:hover {
-    color: #182f65;
-    background-color: white;
-    border: solid 1px #182f65;
+    color: white !important;
+    background-color: #182f65 !important;
+    border: solid 1px white !important;
+    text-decoration: none;
+
 }
 
 

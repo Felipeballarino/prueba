@@ -39,14 +39,11 @@ const LoginModal = ({ open, setOpen, setIsAuthenticated }) => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username, password }),
             });
-            console.log(response)
 
             if (!response.ok) {
                 throw new Error("Usuario o contraseña incorrectos");
             }
-
-            const data = await response.json();
-            sessionStorage.setItem(TOKEN, data); // Guardar sesión en localStorage
+            sessionStorage.setItem(TOKEN, true); // Guardar sesión en localStorage
             setIsAuthenticated(true); // Actualizar estado global
             setOpen(false);
         } catch (err) {

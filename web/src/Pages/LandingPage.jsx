@@ -3,6 +3,7 @@ import Banners from '../Sections/Banners/Banners'
 import Contacto from '../Sections/Contacto/Contacto'
 import Marcas from '../Sections/Marcas/Marcas'
 import QuienesSomos from '../Sections/QuienesSomos/QuienesSomos'
+import Valores from '../Sections/Valores/Valores'
 
 const LandingPage = () => {
     return (
@@ -10,6 +11,7 @@ const LandingPage = () => {
             <Header />
             <div style={{ marginTop: "200px" }}>
                 <Banners />
+                <Valores />
                 <QuienesSomos />
                 <Marcas />
                 <Contacto />

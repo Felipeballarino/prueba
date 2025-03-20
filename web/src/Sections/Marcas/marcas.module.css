@@ -1,5 +1,4 @@
 .marcas {
-    height: 70vh;
     padding: 1rem 4rem;
 }
 
@@ -7,4 +6,17 @@
     color: #182f65;
     text-transform: uppercase;
 
+}
+
+.marcasContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.marcaImagen {
+    width: 200px;
+    height: auto;
 }
