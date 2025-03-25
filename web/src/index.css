@@ -16,6 +16,7 @@
 }
 
 
+
 */:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -61,8 +62,8 @@ h3 {
   font-family: 'MontserratExtraBold', sans-serif;
 }
 
-li button {
-  font-family: 'MontserratExtraBold', sans-serif;
+button {
+  font-family: 'MontserratExtraBold', sans-serif !important;
 }
 
 button {

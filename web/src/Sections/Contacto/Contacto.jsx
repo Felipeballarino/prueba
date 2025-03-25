@@ -1,5 +1,5 @@
 import { TextField, Button, Box } from "@mui/material";
-import { Facebook, Instagram, Mail, Phone, Place } from "@mui/icons-material";
+import { Mail, Phone, Place } from "@mui/icons-material";
 import styles from "./contacto.module.css";
 
 const Contacto = () => {
@@ -21,15 +21,10 @@ const Contacto = () => {
                 <Box className={styles.redes}>
                     <ul>
                         <li><Mail />dgempresa@live.com</li>
-                        {/* <li><Facebook /> Facebook</li> */}
-                        {/* <li><Instagram /> Instagram</li> */}
                         <li><Phone />+54 11 3673 0478</li>
                         <li><Place />Carlos casares 3950 - Isidro Casanova</li>
                     </ul>
-                    <ul style={{ display: "flex", flexDirection: "row", }}>
-                        <li ><Facebook style={{ fontSize: "2rem" }} /> </li>
-                        <li><Instagram style={{ fontSize: "2rem" }} /> </li>
-                    </ul>
+
                 </Box>
                 <Box className={styles.formulario} component="form" onSubmit={handleSubmit}>
                     <div>

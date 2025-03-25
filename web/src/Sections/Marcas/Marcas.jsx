@@ -10,6 +10,17 @@ import sola from "../../assets/marcas/sola.jpg"
 import trefilcon from "../../assets/marcas/trefilcon.jpg"
 import trespuntos from "../../assets/marcas/trespuntos.jpg"
 import tyrolt from "../../assets/marcas/tyrolt.jpg"
+import cerami from "../../assets/marcas/cerami.jpeg"
+import claco from "../../assets/marcas/claco.jpeg"
+import hda from "../../assets/marcas/hda.jpeg"
+import kuwait from "../../assets/marcas/kuwait.jpeg"
+import lorenzetti from "../../assets/marcas/lorenzetti.jpeg"
+import moises from "../../assets/marcas/moises.jpeg"
+import pinas from "../../assets/marcas/pinas.jpeg"
+import pitbuild from "../../assets/marcas/pitbuild.jpeg"
+import psf from "../../assets/marcas/psf.jpeg"
+import sc from "../../assets/marcas/sc.jpeg"
+import sideral from "../../assets/marcas/sideral.jpeg"
 
 
 const marcas = [
@@ -23,6 +34,17 @@ const marcas = [
     { src: trefilcon, alt: "Trefilcon" },
     { src: trespuntos, alt: "Tres Puntos" },
     { src: tyrolt, alt: "Tyrolt" },
+    { src: cerami, alt: "cerami" },
+    { src: claco, alt: "claco" },
+    { src: hda, alt: "hda" },
+    { src: kuwait, alt: "kuwait" },
+    { src: lorenzetti, alt: "lorenzetti" },
+    { src: moises, alt: "moises" },
+    { src: pinas, alt: "pinas" },
+    { src: pitbuild, alt: "pitbuild" },
+    { src: psf, alt: "psf" },
+    { src: sc, alt: "sc" },
+    { src: sideral, alt: "sideral" },
 ];
 
 const Marcas = () => {

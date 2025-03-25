@@ -9,7 +9,7 @@ const LandingPage = () => {
     return (
         <div>
             <Header />
-            <div style={{ marginTop: "200px" }}>
+            <div style={{ marginTop: "150px" }}>
                 <Banners />
                 <Valores />
                 <QuienesSomos />

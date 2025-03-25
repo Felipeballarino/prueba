@@ -1,19 +1,36 @@
 import banner1 from "../../assets/banner1.jpg"
-import banner2 from "../../assets/banner2.avif"
+import banner2 from "../../assets/banner2.jpg"
 import banner3 from "../../assets/banner3.jpg"
 import style from "./banners.module.css"
 
+import { Carousel } from 'antd';
 
 
 const Banners = () => {
-    return (
-        <div style={{ padding: "0 4rem" }}>
-            <div id="home" className={style.banners}>
-                <img src={banner1} alt="banner1" />
-                <img src={banner2} alt="banner2" />
-                <img src={banner3} alt="banner3" />
 
-            </div>
+    const handleScroll = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            const offset = 130; // Ajusta este valor según lo que necesites
+            const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: sectionPosition - offset, behavior: "smooth" });
+        }
+    };
+    return (
+        <div >
+            <Carousel id="home" autoplay className={style.banners}>
+                {[banner1, banner2, banner3].map((banner, index) => (
+                    <div key={index} className={style.bannerItem}>
+                        <div className={style.overlay}>
+                            <img src={banner} alt={`banner${index + 1}`} className={style.bannerImage} />
+                            <div className={style.textContainer}>
+                                <h1>Construye con confianza, <br /> trabajamos contigo.</h1>
+                                <button onClick={() => handleScroll("sobre-nosotros")}>Conócenos</button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </Carousel>
             <div className={style.infoText}>
                 <h1>Donde la calidad y el servicio se encuentran.</h1>
             </div>
@@ -22,3 +39,4 @@ const Banners = () => {
 }
 
 export default Banners
+
