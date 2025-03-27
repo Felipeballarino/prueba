@@ -54,3 +54,33 @@
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem 2rem 2rem 2rem;
+    }
+
+    .container h1 {
+        font-size: 40px;
+        margin: .5rem 0;
+    }
+
+    .contacto {
+        flex-direction: column-reverse;
+    }
+
+    .redes {
+        width: 100%;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .redes ul {
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .formulario {
+        width: 100%;
+    }
+}

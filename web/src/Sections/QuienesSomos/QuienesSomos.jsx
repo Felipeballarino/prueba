@@ -17,7 +17,7 @@ const QuienesSomos = () => {
                     <img src={banner3} alt="foto" />
                 </div>
             </div>
-            <div style={{ textAlign: "center", fontSize: "24px", color: "white", textTransform: "uppercase" }}>
+            <div className={style.mensaje}>
                 <p>Cada día es una nueva oportunidad para seguir creciendo y mejorando. Estamos aquí para servirte y para seguir construyendo juntos un futuro brillante.                </p>
             </div>
         </section>

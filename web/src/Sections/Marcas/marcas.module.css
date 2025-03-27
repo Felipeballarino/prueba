@@ -20,3 +20,27 @@
     width: 170px;
     height: auto;
 }
+
+@media (max-width: 768px) {
+    .marcas {
+        padding: 1rem 2rem;
+    }
+
+    .marcas h1 {
+        font-size: 40px;
+        margin: .5rem 0;
+    }
+
+    .marcasContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .marcaImagen {
+        width: 150px;
+        height: auto;
+    }
+}

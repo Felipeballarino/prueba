@@ -97,3 +97,31 @@
     transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
 
 }
+
+
+@media (max-width: 768px) {
+    .textContainer h1 {
+        top: 15%;
+        left: 10%;
+        font-size: 40px;
+    }
+
+    .bannerItem {
+        height: 60vh;
+    }
+
+    .textContainer button {
+        top: 52%;
+        font-size: 18px;
+    }
+
+    .infoText {
+        padding: 0 2rem;
+    }
+
+    .infoText h1 {
+        display: flex;
+        font-size: 25px;
+    }
+
+}

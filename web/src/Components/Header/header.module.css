@@ -1,5 +1,6 @@
 .header {
     position: fixed;
+    z-index: 100;
     top: 0;
     left: 0;
     right: 0;
@@ -8,7 +9,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1rem;
     background-color: #182f65;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -22,6 +22,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-top: 1rem;
+
 }
 
 .logoContainer {
@@ -52,6 +54,10 @@
     align-items: center;
     text-transform: uppercase;
 
+}
+
+.login p {
+    margin: 0;
 }
 
 
@@ -119,4 +125,90 @@ button {
 
 button:focus {
     outline: none;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0rem 0rem;
+    }
+
+    .headerTop {
+        padding: 1rem 2rem;
+        justify-content: space-between;
+        background-color: #182f65;
+        position: relative;
+        z-index: 100;
+    }
+
+    .login {
+        position: initial;
+        padding-right: 2rem;
+    }
+
+    .login p {
+        display: none;
+    }
+
+    .menuButton {
+        padding-left: 2rem;
+        color: white;
+    }
+
+    .mobileMenu {
+        width: 100%;
+        position: fixed;
+        background: #182f65;
+        top: 130px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 50;
+    }
+
+    .mobileMenu ul {
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+    }
+
+    .mobileMenu ul li {
+        margin: 1rem 0;
+    }
+
+
+    .mobileMenu ul li button {
+        color: white;
+        font-size: 20px;
+    }
+
+    .menuOpen {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        z-index: 50;
+    }
+
+    .mobileMenu li:nth-child(4) button {
+        color: #182f65 !important;
+        font-size: 18px;
+        text-transform: none;
+        background-color: white;
+        border-radius: 8px;
+        padding: 4px 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        border: solid 1px #182f65;
+        transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+        font-family: 'MontserratExtraBold', sans-serif;
+
+    }
+
+
+
+
 }

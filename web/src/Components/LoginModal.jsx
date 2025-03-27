@@ -59,7 +59,8 @@ const LoginModal = ({ open, setOpen, setIsAuthenticated }) => {
             aria-labelledby="login-modal-title"
             aria-describedby="login-modal-description"
         >
-            <Box sx={style} component="form" onSubmit={handleSubmit}>
+            <Box sx={{ ...style, "@media (max-width: 480px)": { width: "70%", top: "40%" } }}
+                component="form" onSubmit={handleSubmit}>
                 <Typography variant="h6" component="h2" sx={{ color: "#182f65", fontWeight: "bold", textTransform: "uppercase" }} >
                     Iniciar Sesión
                 </Typography>

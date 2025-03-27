@@ -4,12 +4,14 @@ import Contacto from '../Sections/Contacto/Contacto'
 import Marcas from '../Sections/Marcas/Marcas'
 import QuienesSomos from '../Sections/QuienesSomos/QuienesSomos'
 import Valores from '../Sections/Valores/Valores'
+import style from "./Landing.module.css";
+
 
 const LandingPage = () => {
     return (
         <div>
             <Header />
-            <div style={{ marginTop: "150px" }}>
+            <div className={style.contenedor}>
                 <Banners />
                 <Valores />
                 <QuienesSomos />
