@@ -6,7 +6,8 @@ import { TOKEN } from "../../constant/api";
 
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
-import DownloadIcon from '@mui/icons-material/Download';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { Button } from "antd";
@@ -48,14 +49,23 @@ const Header = () => {
         setIsAuthenticated(false);
     };
 
-    const handleDownload = () => {
+    const handleDownload = (type) => {
         setIsDownloading(true);
-        const link = document.createElement("a");
-        link.href = "https://drive.google.com/uc?export=download&id=19BgRUMz-IfuoNHHM8CvyBRnjlyDcoTG7";
-        link.setAttribute("download", "precios.pdf");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        if (type === "pdf") {
+            const link = document.createElement("a");
+            link.href = "https://drive.google.com/file/d/1QteJNeUvPzJiHWSABblMEbSNvFOyhWrQ/view";
+            link.setAttribute("download", "precios.pdf");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            const link = document.createElement("a");
+            link.href = "https://docs.google.com/spreadsheets/d/1Y_OAi-f8Zo7GnO823qkQ3Rz28KtveB2N/export?format=xlsx";
+            link.setAttribute("download", "precios.xlsx");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
 
         setTimeout(() => {
             setIsDownloading(false);
@@ -95,14 +105,22 @@ const Header = () => {
                             <li><button onClick={() => handleScroll("nuestras-marcas")}>Nuestras Marcas</button></li>
                             <li><button onClick={() => handleScroll("contactos-redes")}>Contactos y redes</button></li>
                             {isAuthenticated && (
-                                <li>
+                                <li style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                                     <Button
-                                        onClick={handleDownload}
+                                        onClick={() => handleDownload("pdf")}
                                         disabled={isDownloading}
                                         loading={isDownloading}
-                                        icon={<DownloadIcon />}
+                                        icon={<PictureAsPdfIcon />}
                                     >
-                                        PRECIOS
+                                        Precios.pdf
+                                    </Button>
+                                    <Button
+                                        onClick={() => handleDownload("xlsx")}
+                                        disabled={isDownloading}
+                                        loading={isDownloading}
+                                        icon={<UploadFileIcon />}
+                                    >
+                                        Precios.xlsx
                                     </Button>
                                 </li>
                             )}
@@ -114,14 +132,22 @@ const Header = () => {
                         <li><button onClick={() => handleScroll("nuestras-marcas")}>Nuestras Marcas</button></li>
                         <li><button onClick={() => handleScroll("contactos-redes")}>Contactos y redes</button></li>
                         {isAuthenticated && (
-                            <li>
+                            <li style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                                 <Button
-                                    onClick={handleDownload}
+                                    onClick={() => handleDownload("pdf")}
                                     disabled={isDownloading}
                                     loading={isDownloading}
-                                    icon={<DownloadIcon />}
+                                    icon={<PictureAsPdfIcon />}
                                 >
-                                    PRECIOS
+                                    Precios.pdf
+                                </Button>
+                                <Button
+                                    onClick={() => handleDownload("xlsx")}
+                                    disabled={isDownloading}
+                                    loading={isDownloading}
+                                    icon={<UploadFileIcon />}
+                                >
+                                    Precios.xlsx
                                 </Button>
                             </li>
                         )}

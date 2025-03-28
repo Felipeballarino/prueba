@@ -17,9 +17,8 @@ const Banners = () => {
         }
     };
     return (
-        // autoplay
         <div >
-            <Carousel id="home" className={style.banners}>
+            <Carousel autoplay id="home" className={style.banners}>
                 {[banner1, banner2, banner3].map((banner, index) => (
                     <div key={index} className={style.bannerItem}>
                         <div className={style.overlay}>

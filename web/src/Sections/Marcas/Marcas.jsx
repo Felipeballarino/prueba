@@ -1,4 +1,5 @@
 import style from "./marcas.module.css"
+import { useState, useEffect } from "react";
 
 import bosch from "../../assets/marcas/bosch.jpg"
 import conarco from "../../assets/marcas/conarco.jpg"
@@ -21,6 +22,32 @@ import pitbuild from "../../assets/marcas/pitbuild.jpeg"
 import psf from "../../assets/marcas/psf.jpeg"
 import sc from "../../assets/marcas/sc.jpeg"
 import sideral from "../../assets/marcas/sideral.jpeg"
+
+import aliafor from "../../assets/marcas/aliafor.jpeg"
+import bellota from "../../assets/marcas/bellota.jpg"
+import black from "../../assets/marcas/black.jpeg"
+import dewalt from "../../assets/marcas/dewalt.png"
+import duke from "../../assets/marcas/duke.jpg"
+import evel from "../../assets/marcas/EVEL.jpg"
+import extrapol from "../../assets/marcas/extrapol.jpg"
+import fame from "../../assets/marcas/fame.jpeg"
+import fortex from "../../assets/marcas/fortex.jpeg"
+import geltek from "../../assets/marcas/geltek.jpg"
+import ginyplas from "../../assets/marcas/ginyplas.jpeg"
+import glacoxan from "../../assets/marcas/glacoxan.jpg"
+import grilon from "../../assets/marcas/grilon.jpg"
+import hidro from "../../assets/marcas/hidro.png"
+import latyn from "../../assets/marcas/latyn.png"
+import makita from "../../assets/marcas/makita.jpeg"
+import metz from "../../assets/marcas/metz.jpeg"
+import nebraska from "../../assets/marcas/nebraska.jpeg"
+import rapfix from "../../assets/marcas/rapfix.jpeg"
+import santa from "../../assets/marcas/santa.png"
+import sinpar from "../../assets/marcas/sinpar.jpeg"
+import trabex from "../../assets/marcas/trabex.jpg"
+import tramontina from "../../assets/marcas/tramontina.png"
+import SliderMobile from "./components/SliderMobile";
+
 
 
 const marcas = [
@@ -45,20 +72,56 @@ const marcas = [
     { src: psf, alt: "psf" },
     { src: sc, alt: "sc" },
     { src: sideral, alt: "sideral" },
+    { src: aliafor, alt: "aliafor" },
+    { src: bellota, alt: "bellota" },
+    { src: black, alt: "black" },
+    { src: dewalt, alt: "dewalt" },
+    { src: duke, alt: "duke" },
+    { src: evel, alt: "evel" },
+    { src: extrapol, alt: "extrapol" },
+    { src: fame, alt: "fame" },
+    { src: fortex, alt: "fortex" },
+    { src: geltek, alt: "geltek" },
+    { src: ginyplas, alt: "ginyplas" },
+    { src: glacoxan, alt: "glacoxan" },
+    { src: grilon, alt: "grilon" },
+    { src: hidro, alt: "hidro" },
+    { src: latyn, alt: "latyn" },
+    { src: makita, alt: "makita" },
+    { src: metz, alt: "metz" },
+    { src: nebraska, alt: "nebraska" },
+    { src: rapfix, alt: "rapfix" },
+    { src: santa, alt: "santa" },
+    { src: sinpar, alt: "sinpar" },
+    { src: trabex, alt: "trabex" },
+    { src: tramontina, alt: "tramontina" },
 ];
 
 const Marcas = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <section id="nuestras-marcas" className={style.marcas}>
             <h1>Nuestras Marcas</h1>
-            <div className={style.marcasContainer}>
-                {marcas.map((marca, index) => (
-                    <img key={index} src={marca.src} alt={marca.alt} className={style.marcaImagen} />
-                ))}
-            </div>
-
+            {isMobile ? (
+                <SliderMobile marcas={marcas} />
+            ) : (
+                <div className={style.marcasContainer}>
+                    {marcas.map((marca, index) => (
+                        <img key={index} src={marca.src} alt={marca.alt} className={style.marcaImagen} />
+                    ))}
+                </div>
+            )}
         </section>
-    )
-}
+    );
+};
 
-export default Marcas
+export default Marcas;
