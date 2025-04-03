@@ -1,33 +1,58 @@
-import { TextField, Button, Box } from "@mui/material";
+import { useState } from "react";
+import { TextField, Button, Box, Snackbar, Alert } from "@mui/material";
 import { Mail, Phone, Place } from "@mui/icons-material";
 import styles from "./contacto.module.css";
+import { sendEmail } from "../../services/EmailSevice";
 
 const Contacto = () => {
-    const handleSubmit = (event) => {
+    const [open, setOpen] = useState(false);
+    const [alertMessage, setAlertMessage] = useState("");
+    const [alertSeverity, setAlertSeverity] = useState("success");
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log("Formulario enviado:", {
-            nombre: data.get("Nombre y Apellido"),
-            email: data.get("eEmail"),
-            telefono: data.get("Telefono"),
-            mensaje: data.get("Mensaje"),
-        });
+
+        const form = event.currentTarget;
+        const data = new FormData(form);
+        const formDataObject = {
+            nombre: data.get("nombre"),
+            email: data.get("email"),
+            mensaje: data.get("mensaje"),
+        };
+
+        console.log("Formulario enviado:", formDataObject);
+        const response = await sendEmail(formDataObject);
+
+        if (response.mensaje === "Correo enviado con éxito") {
+            setAlertMessage("Correo enviado con éxito");
+            setAlertSeverity("success");
+            form.reset(); // Limpiar formulario
+        } else {
+            setAlertMessage("Error al enviar el correo. Inténtalo nuevamente.");
+            setAlertSeverity("error");
+        }
+
+        setOpen(true); // Mostrar alerta
+    };
+
+    const handleClose = () => {
+        setOpen(false);
     };
 
     return (
         <section id="contactos-redes" className={styles.container}>
-            <h1 >Contacto y Redes</h1>
+            <h1>Contacto y Redes</h1>
             <Box className={styles.contacto}>
                 <Box className={styles.redes}>
                     <ul>
-                        <li><Mail />dgempresa@live.com</li>
-                        <li><Phone />+54 11 3673 0478</li>
-                        <li><Place />Carlos casares 3950 - Isidro Casanova</li>
+                        <li><Mail /> dgempresa@live.com</li>
+                        <li><Phone /> +54 11 3673 0478</li>
+                        <li><Place /> Carlos Casares 3950 - Isidro Casanova</li>
                     </ul>
-
                 </Box>
+
                 <Box className={styles.formulario} component="form" onSubmit={handleSubmit}>
-                    <div>
+                    <div style={{ width: "100%" }}>
                         <TextField
                             fullWidth
                             margin="normal"
@@ -49,16 +74,6 @@ const Contacto = () => {
                             InputProps={{ style: { color: "white", borderColor: "white" } }}
                             InputLabelProps={{ style: { color: "white", background: "#182f65" } }}
                         />
-                        <TextField
-                            fullWidth
-                            margin="normal"
-                            name="telefono"
-                            label="Teléfono"
-                            required
-                            sx={{ color: "white", border: "white solid 1px" }}
-                            InputProps={{ style: { color: "white", borderColor: "white" } }}
-                            InputLabelProps={{ style: { color: "white", background: "#182f65" } }}
-                        />
                     </div>
                     <TextField
                         fullWidth
@@ -72,9 +87,18 @@ const Contacto = () => {
                         InputProps={{ style: { color: "white", borderColor: "white" } }}
                         InputLabelProps={{ style: { color: "white", background: "#182f65" } }}
                     />
-                    <Button variant="contained" sx={{ background: "#ffd418", width: "30%", height: "40px", fontWeight: "bold" }} type="submit">Enviar</Button>
+                    <Button variant="contained" sx={{ background: "#ffd418", width: "30%", height: "40px", fontWeight: "bold" }} type="submit">
+                        Enviar
+                    </Button>
                 </Box>
             </Box>
+
+            {/* Snackbar para mostrar alertas */}
+            <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity={alertSeverity} sx={{ width: "100%" }}>
+                    {alertMessage}
+                </Alert>
+            </Snackbar>
         </section>
     );
 };
