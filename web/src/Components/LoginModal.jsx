@@ -25,6 +25,7 @@ const LoginModal = ({ open, setOpen, setIsAuthenticated }) => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
 
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -66,7 +67,7 @@ const LoginModal = ({ open, setOpen, setIsAuthenticated }) => {
                 </Typography>
                 {error && <Alert severity="error">{error}</Alert>}
                 <TextField
-                    label="Correo Electrónico"
+                    label="Usuario"
                     type="text"
                     fullWidth
                     value={username}

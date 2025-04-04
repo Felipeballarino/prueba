@@ -15,7 +15,8 @@ import { Button } from "antd";
 const Header = () => {
     const [open, setOpen] = useState(false)
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isDownloading, setIsDownloading] = useState(false)
+    const [isDownloadingPDF, setIsDownloadingPDF] = useState(false)
+    const [isDownloadingXLSX, setIsDownloadingXLSX] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -50,15 +51,16 @@ const Header = () => {
     };
 
     const handleDownload = (type) => {
-        setIsDownloading(true);
         if (type === "pdf") {
+            setIsDownloadingPDF(true);
             const link = document.createElement("a");
-            link.href = "https://drive.google.com/file/d/1QteJNeUvPzJiHWSABblMEbSNvFOyhWrQ/view";
+            link.href = "https://drive.google.com/uc?export=download&id=1QteJNeUvPzJiHWSABblMEbSNvFOyhWrQ";
             link.setAttribute("download", "precios.pdf");
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         } else {
+            setIsDownloadingXLSX(true)
             const link = document.createElement("a");
             link.href = "https://docs.google.com/spreadsheets/d/1Y_OAi-f8Zo7GnO823qkQ3Rz28KtveB2N/export?format=xlsx";
             link.setAttribute("download", "precios.xlsx");
@@ -68,7 +70,8 @@ const Header = () => {
         }
 
         setTimeout(() => {
-            setIsDownloading(false);
+            setIsDownloadingXLSX(false);
+            setIsDownloadingPDF(false)
         }, 3000);
     };
 
@@ -108,16 +111,16 @@ const Header = () => {
                                 <li style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                                     <Button
                                         onClick={() => handleDownload("pdf")}
-                                        disabled={isDownloading}
-                                        loading={isDownloading}
+                                        disabled={isDownloadingXLSX}
+                                        loading={isDownloadingPDF}
                                         icon={<PictureAsPdfIcon />}
                                     >
                                         Precios.pdf
                                     </Button>
                                     <Button
                                         onClick={() => handleDownload("xlsx")}
-                                        disabled={isDownloading}
-                                        loading={isDownloading}
+                                        disabled={isDownloadingPDF}
+                                        loading={isDownloadingXLSX}
                                         icon={<UploadFileIcon />}
                                     >
                                         Precios.xlsx
@@ -135,16 +138,16 @@ const Header = () => {
                             <li style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                                 <Button
                                     onClick={() => handleDownload("pdf")}
-                                    disabled={isDownloading}
-                                    loading={isDownloading}
+                                    disabled={isDownloadingXLSX}
+                                    loading={isDownloadingPDF}
                                     icon={<PictureAsPdfIcon />}
                                 >
                                     Precios.pdf
                                 </Button>
                                 <Button
                                     onClick={() => handleDownload("xlsx")}
-                                    disabled={isDownloading}
-                                    loading={isDownloading}
+                                    disabled={isDownloadingPDF}
+                                    loading={isDownloadingXLSX}
                                     icon={<UploadFileIcon />}
                                 >
                                     Precios.xlsx
