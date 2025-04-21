@@ -54,7 +54,7 @@ const Header = () => {
         if (type === "pdf") {
             setIsDownloadingPDF(true);
             const link = document.createElement("a");
-            link.href = "https://drive.google.com/uc?export=download&id=1QteJNeUvPzJiHWSABblMEbSNvFOyhWrQ";
+            link.href = "https://drive.google.com/uc?export=download&id=1ZI0n1pFOC-hbQeh1kCX8F38NUdV02KPt";
             link.setAttribute("download", "precios.pdf");
             document.body.appendChild(link);
             link.click();
@@ -62,7 +62,7 @@ const Header = () => {
         } else {
             setIsDownloadingXLSX(true)
             const link = document.createElement("a");
-            link.href = "https://docs.google.com/spreadsheets/d/1Y_OAi-f8Zo7GnO823qkQ3Rz28KtveB2N/export?format=xlsx";
+            link.href = "https://docs.google.com/spreadsheets/d/1V5807oEXnhzrP1k8rD-d99DPjQGJVCtn/export?format=xlsx";
             link.setAttribute("download", "precios.xlsx");
             document.body.appendChild(link);
             link.click();
