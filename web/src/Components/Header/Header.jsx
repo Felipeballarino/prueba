@@ -61,8 +61,8 @@ const Header = () => {
             document.body.removeChild(link);
         } else {
             setIsDownloadingXLSX(true)
-            const link = document.createElement("a");
-            link.href = "https://docs.google.com/spreadsheets/d/1V5807oEXnhzrP1k8rD-d99DPjQGJVCtn/export?format=xlsx";
+            const link = document.createElement("a");            
+            link.href = "https://docs.google.com/spreadsheets/d/1k-w8g7dJtYwY_2TmO8E22SfzhihAqjZe/export?format=xlsx";
             link.setAttribute("download", "precios.xlsx");
             document.body.appendChild(link);
             link.click();
