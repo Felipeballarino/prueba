@@ -45,7 +45,7 @@ const Contacto = () => {
             <Box className={styles.contacto}>
                 <Box className={styles.redes}>
                     <ul>
-                        <li><Mail /> dgempresa@live.com</li>
+                        <li><Mail /> distrigarcia2010@gmail.com</li>
                         <li><Phone /> +54 11 3673 0478</li>
                         <li><Place /> Carlos Casares 3950 - Isidro Casanova</li>
                     </ul>

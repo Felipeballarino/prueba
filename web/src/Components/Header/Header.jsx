@@ -19,6 +19,22 @@ const Header = () => {
     const [isDownloadingXLSX, setIsDownloadingXLSX] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [hideHeader, setHideHeader] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            // Cuando el scroll baja más de 400px, ocultamos el header
+            if (scrollY > 400) {
+                setHideHeader(true);
+            } else {
+                setHideHeader(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     useEffect(() => {
         const token = sessionStorage.getItem(TOKEN);
@@ -54,7 +70,7 @@ const Header = () => {
         if (type === "pdf") {
             setIsDownloadingPDF(true);
             const link = document.createElement("a");
-            link.href = "https://drive.google.com/uc?export=download&id=1ZI0n1pFOC-hbQeh1kCX8F38NUdV02KPt";
+            link.href = "https://drive.google.com/uc?export=download&id=1a44G9-gzZzr7ox3DkRD-zBhxxQ-lwuBI";
             link.setAttribute("download", "precios.pdf");
             document.body.appendChild(link);
             link.click();
@@ -62,7 +78,7 @@ const Header = () => {
         } else {
             setIsDownloadingXLSX(true)
             const link = document.createElement("a");
-            link.href = "https://docs.google.com/spreadsheets/d/1V5807oEXnhzrP1k8rD-d99DPjQGJVCtn/export?format=xlsx";
+            link.href = "https://docs.google.com/spreadsheets/d/1x83v253A7YOT64wbOZPP8Zfu2BvBevIR/export?format=xlsx";
             link.setAttribute("download", "precios.xlsx");
             document.body.appendChild(link);
             link.click();
@@ -78,7 +94,7 @@ const Header = () => {
     return (
         <>
             <LoginModal open={open} setOpen={setOpen} setIsAuthenticated={setIsAuthenticated} />
-            <div className={style.header}>
+            <div className={`${style.header} ${hideHeader ? style.hidden : ""}`}>
                 <div className={style.headerTop}>
                     {isMobile &&
                         <button className={style.menuButton} onClick={() => setMenuOpen(!menuOpen)}>

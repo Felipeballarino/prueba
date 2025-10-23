@@ -5,7 +5,7 @@ export async function sendEmail(data) {
             nombre: data.nombre,
             email: data.email,
             mensaje: data.mensaje,
-            destinatario: "dgempresa@live.com"
+            destinatario: "distrigarcia2010@gmail.com"
         };
         const response = await fetch("https://enddg-production.up.railway.app/enviar-email", {
             method: 'POST',
